@@ -26,7 +26,7 @@ The system captures audio inputs, modulates them onto a visible light beam via a
 1. **Audio Capture:** Sound waves are picked up by the microphone module on the transmitter side, converting acoustic vibrations into a weak electrical analog signal.
 2. **Amplification and Modulation:** The signal is processed and boosted using the PAM8403 audio amplifier. This signal is then fed into the LED(paired with resistor to regulate current), causing the light intensity to fluctuate rapidly in synchronization with the audio waveform.
 3. **Wireless Transmission:** The modulated light beam travels wirelessly through open space along a line-of-sight path.
-4. **Optical Detection:** The solar panel on the receiver captures the varying light intensities and convert the optical energy back into a micro-electrical element.
+4. **Optical Detection:** The solar panel on the receiver captures the varying light intensities and convert the optical energy back into a micro-electrical signal.
 5. **Output Reproduction:** The weak electrical signal from the solar panel is boosted by the receiver's PAM8403 and sent directly to the woofer, successfully playing back the original audio.
 
 # Limitations
@@ -37,4 +37,4 @@ The system captures audio inputs, modulates them onto a visible light beam via a
 # Future Enhancements
 1. **Digital Data Transmission:** Expand the system beyond analog audio to transmit digital data(such as text or files) using microcontroller(like Arduino or ESP32).
 2. **Increased Range and Focus:** Implement laser diodes or optical lenses to extend the transmission distance and improve directional focus.
-3. **Advanced Modulation Schemes:** incorporate digital modulation techniques(like OFDM or PWM) to increase data throughout and minimize ambient noise interference.
+3. **Advanced Modulation Schemes:** incorporate digital modulation techniques(like OFDM or PWM) to increase data throughput and minimize ambient noise interference.
