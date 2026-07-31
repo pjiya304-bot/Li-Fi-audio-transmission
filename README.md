@@ -34,4 +34,19 @@ however, the recovered output at the woofer was not clear, intelligible audio. I
 ## Limitation
 1. Line-of-Sight Requirement: Because light cannot pass through opaque objects, any physical obstruction between the LED and the solar panel will interrupt the audio transmission.
 2. Range Constraints: The operational range is limited by the brightness of the LED and the sensitivity of the solar panel, making it best suited for short-range indoor communication.
-3. Ambient Light Interference: Strong external 
+3. Ambient Light Interference: Strong external light sources(such as sunlight or fluorescent bulbs) can introduce noise or interference with the optical signal.
+4. Signal Fidelity: As notes above, the recovered signal was insufficient to reproduce clear audio, likely due to insufficient gain at the receiver-side amplifier, noise introduced between the recovered signal strength and the woofer's driving requirements.
+
+## Future Enhancements
+1. Digital Data Transmission: Expand the system beyond analog audio to transmit digital data(such as text or files) using a microcontroller(like Arduino or ESP32).
+2. Increased Range and Focus: Implement laser diodes or optical lenses to extend the transmission distance and improve directional focus.
+3. Advanced Modulation Schemes: Incorporate digital modulation techniques(like OFDM or PWM) to increase data throughput and minimize ambient noise interference.
+4. Improved Signal Fidelity: Investigate a dedicated amplification stage matched to the woofer's specifications or an alternative photodetector(such as photodiode) with response time to address the audio clarity issue observed in this prototype.
+
+## Circuit Diagram
+
+
+## Hardware Photos
+Note: The physical hardware for this project is currently retained by the supervising faculty member as part of departmental project custody, so a photograph of the built system is not available. The circuit diagrams above illustrate the transmitter and receiver design.
+
+## Full Technical Report
