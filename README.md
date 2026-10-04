@@ -79,9 +79,9 @@ end
 ---
 
 ## Results
-**What worked:** Audio-driven light modulation at the transmitter was detectable at the receiver through solar panel, confirming that information was carried over the optical link.
----
-**What did not:** The recovered output at the woofer was not clear, intelligible audio. It appeared mainly as a shaking/vibrating response, meaning a signal was recovered but was not strong or clean enough for accurate reproduction.
+- **What worked:** Audio-driven light modulation at the transmitter was detectable at the receiver through solar panel, confirming that information was carried over the optical link.
+
+- **What did not:** The recovered output at the woofer was not clear, intelligible audio. It appeared mainly as a shaking/vibrating response, meaning a signal was recovered but was not strong or clean enough for accurate reproduction.
 
 This is a genuine limitation of the prototype, not a total failure: light-based transmission and detection worked, while the amplification and signal-conditioning stages need refinement.
 
