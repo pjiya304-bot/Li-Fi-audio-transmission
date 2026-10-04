@@ -5,7 +5,7 @@
 
 ![Type](https://img.shields.io/badge/Type-Hardware%20Prototype-orange)
 
-![Status](https://imag.shields.io/badge/Status-Prototype-yellow)
+![Status](https://img.shields.io/badge/Status-Prototype-yellow)
 
 ---
 ## Overview
