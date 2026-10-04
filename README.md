@@ -30,9 +30,6 @@ D[Solar Panel] --> E[PAM8403 Amplifier]
 E --> F[Woofer]
 end
 ```
-
-> **Signal Flow:** Microphone -> PAM8403 -> LED -> Free space (light) -> Solar Panel -> Pam8403 -> Woofer
-
 ---
 
 ## Why Li-Fi?
