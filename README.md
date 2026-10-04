@@ -19,15 +19,15 @@ P1[9V Battery] --> R1[7805 Regulator]
 R1 -. 5V .-> A
 R1 -. 5V .-> B
 A[Microphone Module] --> B[PAM8403 Amplifier]
-B --> C[LED + Resistor]
+B --> C[Resistor] --> D[LED]
 end
 
-C == "Visible Light (free space)" ==> D
+D == "Visible Light (free space)" ==> E
  subgraph RX["Receiver"]
 P2[9V Battery] --> R2[7805 Regulator]
-R2 -. 5V .-> E
-D[Solar Panel] --> E[PAM8403 Amplifier]
-E --> F[Woofer]
+R2 -. 5V .-> F
+E[Solar Panel] --> F[PAM8403 Amplifier]
+F --> G[Woofer]
 end
 ```
 ---
