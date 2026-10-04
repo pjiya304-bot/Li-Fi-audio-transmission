@@ -15,12 +15,17 @@ The system captures audio input, modulates it onto a visible light beam via an L
 ```mermaid
 flowchart LR
 subgraph TX["Transmitter"]
+P1[9V Battery] --> R1[7805 Regulator]
+R1 -. 5V .-> A
+R1 -. 5V .-> B
 A[Microphone Module] --> B[PAM8403 Amplifier]
 B --> C[LED + Resistor]
 end
 
-C -. "Visible Light (free space)" .-> D
+C == "Visible Light (free space)" ==> D
  subgraph RX["Receiver"]
+P2[9V Battery] --> R2[7805 Regulator]
+R2 -. 5V .-> E
 D[Solar Panel] --> E[PAM8403 Amplifier]
 E --> F[Woofer]
 end
