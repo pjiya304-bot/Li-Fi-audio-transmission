@@ -12,7 +12,19 @@
 Traditional wireless communication relies heavily on Radio Frequencies(RF), which suffer from electromagnetic interference, bandwidth congestion and security vulnerabilities. This project demonstrates an alternative: **Li-Fi(Light Fidelity)**
 The system captures audio input, modulates it onto a visible light beam via an LED, receives it at a distance using solar panel detector and power amplifier. It is a hands-on implementation of optical wireless communication, showing the potential of light as a secure, high bandwidth data medium. 
 ## System Block Diagram
-![Block Diagram](images/block-diagram.png)
+```mermaid
+flowchart LR
+subgraph TX["Transmitter"]
+A[Microphone Module] --> B[PAM8403 Amplifier]
+B --> C[LED + Resistor]
+end
+
+C -. "Visible Light (free space)" .-> D
+ subgraph RX["Receiver"]
+D[Solar Panel] --> E[PAM8403 Amplifier]
+E --> F[Woofer]
+end
+```
 
 > **Signal Flow:** Microphone -> PAM8403 -> LED -> Free space (light) -> Solar Panel -> Pam8403 -> Woofer
 
