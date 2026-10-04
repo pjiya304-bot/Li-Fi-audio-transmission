@@ -50,7 +50,7 @@ end
 | Input/Detector | Microphone Module | Solar Panel |
 | Audio Amplification | PAM8403 module | PAM8403 module |
 | Optical element | LED | n/a |
-| Protection | Current-limiting resistor | n/a |
+| Protection | Resistor | n/a |
 | Output | n/a | Woofer |
 
 ---
@@ -74,7 +74,7 @@ end
 
 ![Receiver Circuit](images/receiver-circuit.png)
 
-> **Note:** The Physical hardware is currently held by the supervising faculty member as part of departmental project custody, so a photograph of the built system is not available. the circuit diagrams above shown are the transmitter and receiver design.
+> **Note:** The Physical hardware is currently held by the supervising faculty member as part of departmental project custody, so a photograph of the built system is not available. The circuit diagrams above shown are the transmitter and receiver designs.
 
 ---
 
@@ -87,7 +87,7 @@ This is a genuine limitation of the prototype, not a total failure: light-based 
 **Likely cause:**
 - Insufficient gain at the receiver-side amplifier.
 - Mismatch between the weak recovered signal and the woofer's drive requirements.
-- Slow response if the solar panel as a detector.
+- Slow response of the solar panel as a detector.
 - Noise picked up in the receiver chain.
 
 ---
@@ -106,8 +106,8 @@ This is a genuine limitation of the prototype, not a total failure: light-based 
 ## Future Enhancements
 - [ ] Use laser diode or optical lenses to extend range and improve focus
 - [ ] Try digital modulation techniques (PWM, OFDM) to increase throughput and reduce ambient noise
-- [ ] Add a dedicated amplificiation stage matched to the woofer's specifications
 - [ ] Replace the solar panel with a faster photodiode to improve audio clarity
+- [ ] Add a speaker and work according to its specifications
 
 ---
 
