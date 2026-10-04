@@ -68,11 +68,11 @@ end
 ## Circuit Diagram
 ### Transmitter
 
-![Transmitter Circuit](images/transmitter-circuit.png)
+![Transmitter Circuit](images/Transmitter-circuit.png)
 
 ### Receiver
 
-![Receiver Circuit](images/receiver-circuit.png)
+![Receiver Circuit](images/Receiver-circuit.png)
 
 > **Note:** The Physical hardware is currently held by the supervising faculty member as part of departmental project custody, so a photograph of the built system is not available. The circuit diagrams above shown are the transmitter and receiver designs.
 
