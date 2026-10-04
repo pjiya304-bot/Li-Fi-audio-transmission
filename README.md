@@ -1,50 +1,99 @@
-# Li-Fi-audio-transmission
-A prototype wireless communication system that utilizes Visible Light to stream real-time audio through free space using an LED and a solar panel.
+# Li-Fi Audio Transmission
+**Streaming real-time audio through free space using visible light, an LED and a solar panel.**
 
+![Domain](https://img.shields.io/badge/Domain-Optical%20Wireless-blue)
+
+![Type](https://img.shields.io/badge/Type-Hardware%20Prototype-orange)
+
+![Status](https://imag.shields.io/badge/Status-Prototype-yellow)
+
+---
 ## Overview
-Traditional wireless communication relies heavily on Radio Frequencies(RF), which suffer from electromagnetic interference, bandwidth congestion and security vulnerabilities. This project demonstrates an alternative approach: Li-Fi(Light Fidelity)
-The system captures audio input, modulates it onto a visible light beam via an LED and receives it at a distance using solar panel detector and power amplifies. It serves as a practical, hands-on implementation of optical wireless communication, highlighting the potential of using light as a secure, high-bandwidth data medium.
+Traditional wireless communication relies heavily on Radio Frequencies(RF), which suffer from electromagnetic interference, bandwidth congestion and security vulnerabilities. This project demonstrates an alternative: **Li-Fi(Light Fidelity)**
+The system captures audio input, modulates it onto a visible light beam via an LED, receives it at a distance using solar panel detector and power amplifier. It is a hands-on implementation of optical wireless communication, showing the potential of light as a secure, high bandwidth data medium. 
+## System Block Diagram
+![Block Diagram](images/block-diagram.png)
+
+> **Signal Flow:** Microphone -> PAM8403 -> LED -> Free space (light) -> Solar Panel -> Pam8403 -> Woofer
+
+---
+
+## Why Li-Fi?
+| Aspect | RF (Wi-Fi, Radio) | Li-Fi (Visible Light) |
+|---|---|---|
+| Spectrum | Congested, regulated | Large, unlicensed |
+| Interference | Prone to electromagnetic interference | Immune to RF interference |
+| Security | Signals pass through walls | Confined to line of sight |
+| Limitation | Crowded bands | Needs clear line of sight |
+
+---
 
 ## Components Used
-**Transmitter Circuit**
-1. **Power source:** 9V battery
-2. **Voltage Regulation:** 7805 Voltage Regulator
-3. **Signal Processing:** PAM8403 audio amplifier module
-4. **Optical Emitter:** LED
-5. **Circuit Protection:** Resistor
+| Block | Transmitter | Receiver |
+|---|---|---|
+| Power source | 9V battery | 9V battery |
+| Voltage regulation | 7805 regulator | 7805 regulator |
+| Input/Detector | Microphone Module | Solar Panel |
+| Audio Amplification | PAM8403 module | PAM8403 module |
+| Optical element | LED | n/a |
+| Protection | Current-limiting resistor | n/a |
+| Output | n/a | Woofer |
 
-**Receiver Circuit**
-1. **Power source:** 9V battery
-2. **Voltage Regulation:** 7805 Voltage Regulator
-3. **Optical Detector:** Solar Panel
-4. **Signal Amplification:** PAM8403 audio amplifier
-5. **Audio Output:** Woofer
+---
 
 # How it Works
-1. Voltage: The Voltage from a 9V battery is converted to approx. 5V which is the suitable voltage for our components.
-2. Audio Capture: Sound waves are picked up by the microphone module on the transmitter side, converting acoustic vibrations into a weak electrical analog signal.
-3. Amplification and Modulation: The signal is processed and boosted using the PAM8403 audio amplifier. This signal is then fed into the LED(paired with a resistor to regulate current), causing the light intensity to fluctuate rapidly in synchronization with the audio waveform.
-4. Wireless Transmission: The modulated light beam travels wirelessly through open space along a line-of-sight path.
-5. Optical Detection: The solar panel on the receiver captures the varying light intensities and convert the optical energy back into a micro-electrical signal.
-6. Output Reproduction: The weak electrical signal from the solar panel is boosted by the receiver's PAM8403 and sent to the woofer.
+1. **Power:** The 9V battery is regulated to about 5V by the 7805, suitable for the modules.
+2. **Capture:** The microphone module converts sound waves into a weak analog electrical signal.
+3. **Amplify:** The PAM8403 boosts the signal.
+4. **Modulate:** The signal drives the LED (with a series resistor to limit current), making the light intensity vary in sync with the audio waveform.
+5. **Transmit:** The modulated light travels through open space along a line-of-sight path.
+6. **Detect:** The solar panel converts the varying light intensity back into a small electrical signal.
+7. **Reproduce:** The receiver-side PAM8403 boosts the signal and sends it to the woofer.
 
-## Results and Observations
-The system successfully demonstrated the core Li-Fi principle: audio-driven light modulation at the transmitter was detectable at the receiver through the solar panel, confirming that information was indeed being carried over the optical link.
-However, the recovered output at the woofer was not clear, intelligible audio. Instead, it presented primarily as a shaking/vibrating response - indicating that while a signal was successfully recovered, it was not strong or clean enough to drive the woofer into accurate audio reproduction. This is a genuine limitation of the current prototype rather than a complete failure: it confirms the light based transmission and detection worked, while highlighting that the amplification and signal-conditioning stages need further refinement to reproduce usable audio.
+---
+## Circuit Diagram
+### Transmitter
 
-## Limitation
-1. Line-of-Sight Requirement: Because light cannot pass through opaque objects, any physical obstruction between the LED and the solar panel will interrupt the audio transmission.
-2. Range Constraints: The operational range is limited by the brightness of the LED and the sensitivity of the solar panel, making it best suited for short-range indoor communication.
-3. Ambient Light Interference: Strong external light sources(such as sunlight or fluorescent bulbs) can introduce noise or interference with the optical signal.
-4. Signal Fidelity: As noted above, the recovered signal was insufficient to reproduce clear audio, likely due to insufficient gain at the receiver-side amplifier, noise introduced between the recovered signal strength and the woofer's driving requirements.
+![Transmitter Circuit](images/transmitter-circuit.png)
+
+### Receiver
+
+![Receiver Circuit](images/receiver-circuit.png)
+
+> **Note:** The Physical hardware is currently held by the supervising faculty member as part of departmental project custody, so a photograph of the built system is not available. the circuit diagrams above shown are the transmitter and receiver design.
+
+---
+
+## Results
+**What worked:** Audio-driven light modulation at the transmitter was detectable at the receiver through solar panel, confirming that information was carried over the optical link.
+**What did not:** The recovered output at the woofer was not clear, intelligible audio. It appeared mainly as a shaking/vibrating response, meaning a signal was recovered but was not strong or clean enough for accurate reproduction.
+
+This is a genuine limitation of the prototype, not a total failure: light-based transmission and detection worked, while the amplification and signal-conditioning stages need refinement.
+
+**Likely cause:**
+- Insufficient gain at the receiver-side amplifier.
+- Mismatch between the weak recovered signal and the woofer's drive requirements.
+- Slow response if the solar panel as a detector.
+- Noise picked up in the receiver chain.
+
+---
+
+## Limitations
+
+| Limitation | Explanation |
+|---|---|
+| Line of sight | Any opaque obstruction interrupts the transmission |
+| Range | Limited by LED brightness and solar panel sensitivity, best for short-range indoor use |
+| Ambient light | Sunlight or Fluorescent bulbs can add noise to the optical signal |
+| Signal fidelity | Recovered signal was insufficient for clear audio |
+
+---
 
 ## Future Enhancements
-1. Increased Range and Focus: Implement laser diodes or optical lenses to extend the transmission distance and improve directional focus.
-2. Advanced Modulation Schemes: Incorporate digital modulation techniques(like OFDM or PWM) to increase data throughput and minimize ambient noise interference.
-3. Improved Signal Fidelity: Investigate a dedicated amplification stage matched to the woofer's specifications or an alternative photodetector(such as photodiode) with response time to address the audio clarity issue observed in this prototype.
+- [ ] Use laser diode or optical lenses to extend range and improve focus
+- [ ] Try digital modulation techniques (PWM, OFDM) to increase throughput and reduce ambient noise
+- [ ] Add a dedicated amplificiation stage matched to the woofer's specifications
+- [ ] Replace the solar panel with a faster photodiode to improve audio clarity
 
-## Circuit Diagram
+---
 
-
-## Hardware Photos
-Note: The physical hardware for this project is currently retained by the supervising faculty member as part of departmental project custody, so a photograph of the built system is not available. The circuit diagrams above illustrate the transmitter and receiver design.
